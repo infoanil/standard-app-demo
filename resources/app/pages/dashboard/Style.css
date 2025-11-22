@@ -1,0 +1,131 @@
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.chart-filter.switch {
+    align-self: end;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(26, 26, 26);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(0, 164, 124);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+}
+
+.switch.micro {
+    width: 32px;
+    height: 20px;
+}
+.switch.micro .slider:before {
+    height: 0.75rem;
+    width: 0.75rem;
+}
+.switch.micro input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+}
+.switch.micro .slider:before {
+    bottom: 4px;
+    left: 4px;
+}
+.switch.micro .slider.round {
+    border-radius: 0.375rem;
+}
+.switch.micro .slider.round:before {
+    border-radius: 0.1875rem;
+}
+
+.switch.slim {
+    width: 56px;
+    height: 28px;
+}
+.switch.slim .slider:before {
+    height: 24px;
+    width: 24px;
+}
+.switch.slim input:checked + .slider:before {
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(28px);
+}
+
+.switch.medium {
+    width: 72px;
+    height: 36px;
+}
+.switch.medium .slider:before {
+    height: 32px;
+    width: 32px;
+}
+.switch.medium input:checked + .slider:before {
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
+}
+
+.switch.large {
+    width: 88px;
+    height: 44px;
+}
+.switch.large .slider:before {
+    height: 40px;
+    width: 40px;
+}
+.switch.large input:checked + .slider:before {
+    -webkit-transform: translateX(44px);
+    -ms-transform: translateX(44px);
+    transform: translateX(44px);
+}
+
+
+/*---------------- Custom ------------------------*/
+
+.actions_container {
+    display: flex;
+    gap: 5px;
+}
+.actions_container .Polaris-Icon {
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+[[extensions]]
+name = "Send customer invitation"
+handle = "send-customer-invitation"
+uid = "210899f6-84db-03d1-9157-5d1af258a11aa4f2d501"
+type = "flow_action"
+
+description = "Send account invitation to the customers"
+runtime_url = "https://bulk-invites.upsolite.com/api/shopify/flows/send-invitation"
+
+[settings]
+
+  [[settings.fields]]
+  type = "customer_reference"
+  required = true
+
+  #[[settings.fields]]
+  #type = "single_line_text_field"
+  #key = "email"
+  #name = "Email"
+  #description = "Customer email to send the invitation"
+  #required = true

@@ -1,0 +1,30 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "83bba40619268a9a9ca7602de5ee5e94"
+application_url = "https://bulk-invites.upsolite.com/"
+embedded = true
+name = "UpSolite: Bulk Invite & Login"
+handle = "bulk-invite-and-login"
+
+[build]
+
+[webhooks]
+api_version = "2025-04"
+
+[[webhooks.subscriptions]]
+uri = "https://bulk-invites.upsolite.com/webhook/customers-data-request"
+compliance_topics = [ "customers/data_request" ]
+
+[[webhooks.subscriptions]]
+uri = "https://bulk-invites.upsolite.com/webhook/customers-redact"
+compliance_topics = [ "customers/redact" ]
+
+[[webhooks.subscriptions]]
+uri = "https://bulk-invites.upsolite.com/webhook/shop-redact"
+compliance_topics = [ "shop/redact" ]
+
+[auth]
+redirect_urls = [ "https://bulk-invites.upsolite.com/authenticate" ]
+
+[pos]
+embedded = false

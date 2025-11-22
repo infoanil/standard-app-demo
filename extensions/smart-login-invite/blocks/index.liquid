@@ -1,0 +1,128 @@
+<style>
+    .login-helper .d-none {
+        display: none;
+    }
+</style>
+
+<script>
+    window.bulkInviteAppSettings = {{ block.settings | json }};
+</script>
+
+<script type="application/ld+json" id="bulk_invite_app_settings">
+    {{ block.settings | json }}
+</script>
+
+<script src="{{ 'index.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "Dynamic Login",
+    "target": "head",
+    "settings": [
+        {
+            "type": "text",
+            "label": "Api Token",
+            "id": "api_token"
+        },
+        {
+            "type": "textarea",
+            "label": "Success Message (Invitation sent)",
+            "id": "success_message",
+            "default": "Invitation sent successfully"
+        },
+        {
+            "type": "textarea",
+            "label": "Success Message (Active customer found)",
+            "id": "success_message_customer_found",
+            "default": "Account found. Enter your password."
+        },
+        {
+            "type": "color",
+            "label": "Success Font Color",
+            "id": "success_font_color",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "label": "Success Font Size",
+            "id": "success_font_size",
+            "step": 1,
+            "min": 1,
+            "max": 100,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "select",
+            "label": "Success Font Weight",
+            "id": "success_font_weight",
+            "options": [
+                {
+                    "value": "light",
+                    "label": "Light"
+                },
+                {
+                    "value": "normal",
+                    "label": "Normal"
+                },
+                {
+                    "value": "bold",
+                    "label": "Bold"
+                },
+                {
+                    "value": "bolder",
+                    "label": "Bolder"
+                }
+            ],
+            "default": "normal"
+        },
+        {
+            "type": "textarea",
+            "label": "Error Message (Customer not found)",
+            "id": "error_message",
+            "default": "Customer not found please create a new account"
+        },
+        {
+            "type": "color",
+            "label": "Error Font Color",
+            "id": "error_font_color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "range",
+            "label": "Error Font Size",
+            "id": "error_font_size",
+            "step": 1,
+            "min": 1,
+            "max": 100,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "select",
+            "label": "Error Font Weight",
+            "id": "error_font_weight",
+            "options": [
+                {
+                    "value": "light",
+                    "label": "Light"
+                },
+                {
+                    "value": "normal",
+                    "label": "Normal"
+                },
+                {
+                    "value": "bold",
+                    "label": "Bold"
+                },
+                {
+                    "value": "bolder",
+                    "label": "Bolder"
+                }
+            ],
+            "default": "normal"
+        }
+    ]
+}
+{% endschema %}
+
